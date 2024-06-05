@@ -1,2 +1,4 @@
-// I will put javascript code here
-console.log('Gallery script loaded.');
+document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.querySelector(".gallery");
+    gallery.style.opacity = 1;
+});
