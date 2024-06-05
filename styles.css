@@ -7,11 +7,14 @@ body {
 
 .gallery {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
+}
+.gallery-item {
+    font-family: 'Poppins';
 }
 
 img {
-    width: 25%;
-    height: auto;
+    width: 293px;
+    height: 588px;
     object-fit: cover;
 }
