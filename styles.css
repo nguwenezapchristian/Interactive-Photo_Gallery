@@ -7,14 +7,18 @@ body {
 
 .gallery {
     display: flex;
+    gap: 8px;
     /* height: 100vh; */
 }
 .gallery-item {
     font-family: 'Poppins';
-}
-
-img {
     width: 293px;
     height: 588px;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    padding: 40px;
+    color: white;
 }
