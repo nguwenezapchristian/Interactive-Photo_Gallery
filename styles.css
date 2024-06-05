@@ -108,7 +108,7 @@ a {
     opacity: 1;
 }
 
-/* Mobile-specific styles */
+/* Mobile Responsiveness */
 @media (max-width: 600px) {
     .gallery {
         width: 400px;
