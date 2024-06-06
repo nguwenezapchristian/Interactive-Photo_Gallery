@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Interactive Photo Gallery</title>
+    <!-- Include Normalize.css for cross-browser consistency -->
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <!-- Linking to the main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Linking to Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
-
 <body>
-    <!-- The gallery container -->
+    <!-- The main container for the gallery -->
     <div class="gallery">
-        <div class="gallery-item" style="--bg-image: url('gallery/fennec fox.jpeg');">
+        <!-- Each gallery item has a data attribute for its background image -->
+        <div class="gallery-item" data-bg-image="gallery/fennec_fox.jpeg">
             <div class="info">
                 <h2>Fennec Fox</h2>
                 <p>India</p>
             </div>
-            <a href="#">Know more &#8594</a>
+            <a href="#">Know more &#8594;</a>
         </div>
-        <div class="gallery-item" style="--bg-image: url('gallery/humpback whale.jpeg');">
+        <div class="gallery-item" data-bg-image="gallery/humpback_whale.jpeg">
             <div class="info">
                 <h2>Humpback Whale</h2>
                 <p>South Africa</p>
             </div>
-            <a href="#">Know more &#8594</a>
+            <a href="#">Know more &#8594;</a>
         </div>
-        <div class="gallery-item" style="--bg-image: url('gallery/common brown baboon.jpeg');">
+        <div class="gallery-item" data-bg-image="gallery/common_brown_baboon.jpeg">
             <div class="info">
                 <h2>Common Brown Baboon</h2>
                 <p>South Africa</p>
             </div>
-            <a href="#">Know more &#8594</a>
+            <a href="#">Know more &#8594;</a>
         </div>
-        <div class="gallery-item" style="--bg-image: url('gallery/spotted deer.jpeg');">
+        <div class="gallery-item" data-bg-image="gallery/spotted_deer.jpeg">
             <div class="info">
                 <h2>Spotted Deer</h2>
                 <p>Amazon</p>
             </div>
-            <a href="#">Know more &#8594</a>
+            <a href="#">Know more &#8594;</a>
         </div>
     </div>
+    <!-- Linking to the main JavaScript file -->
     <script src="script.js"></script>
 </body>
-
 </html>

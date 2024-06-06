@@ -1,4 +1,4 @@
-/* Basic styling for the gallery */
+/* Basic reset and styling for the body */
 body {
     margin: 0;
     padding: 0;
@@ -10,14 +10,16 @@ body {
     min-height: 100vh;
 }
 
+/* Flexbox layout for the gallery container */
 .gallery {
     display: flex;
     gap: 2px;
-    opacity: 0;
+    opacity: 0; /* Start hidden, fade in later */
     margin: 0 auto;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
 }
 
+/* Styling each gallery item */
 .gallery-item {
     width: 293px;
     height: 588px;
@@ -28,62 +30,66 @@ body {
     padding: 40px;
     color: white;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow for the zoom effect */
 }
 
-.gallery-item::before {
-    content: "";
+/* Background image styling for gallery items */
+.bg-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: var(--bg-image);
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-    z-index: 0;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    z-index: 0; /* Place behind text and links */
 }
 
-.gallery-item:hover::before {
+/* Hover effect to zoom and blur the background image */
+.gallery-item:hover .bg-image {
     transform: scale(1.1);
     filter: grayscale(100%) blur(6px);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5)
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-.gallery-item::after {
-    content: "";
+/* Gradient overlay to enhance text readability */
+.gradient-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-    z-index: 1;
+    z-index: 1; /* Place above the background image but below the text */
 }
 
+/* Info text styling */
 .gallery-item .info {
     width: 213px;
     gap: 8px;
-    margin-top: auto;
+    margin-top: auto; /* Push to the bottom */
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Place above the gradient */
     text-align: left;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Hover effect to move the info text */
 .gallery-item:hover .info {
     transform: translateY(-40px);
 }
 
+/* Heading styles */
 .gallery-item .info h2 {
     text-transform: uppercase;
     font-size: 38px;
     font-weight: 700;
     line-height: 38px;
-    height: 76px;
+    height: 76px; /* Fixed height */
 }
 
+/* Paragraph styles */
 .gallery-item .info p {
     height: 16px;
     opacity: 70%;
@@ -92,38 +98,40 @@ body {
     line-height: 16.02px;
 }
 
+/* Link styles */
 a {
     text-decoration: none;
     font-weight: bold;
-    z-index: 2;
-    opacity: 0;
+    z-index: 2; /* Place above the gradient */
+    opacity: 0; /* Start hidden, show on hover */
     position: absolute;
     bottom: 40px;
     left: 40px;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* Smooth transition for hover effects */
     color: aqua;
 }
 
+/* Hover effect to show the link */
 .gallery-item:hover a {
     opacity: 1;
 }
 
-/* Mobile Responsiveness */
+/* Responsive design adjustments for mobile devices */
 @media (max-width: 600px) {
     .gallery {
-        width: 400px;
-        height: 600px;
-        gap: 2px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
     
     .gallery-item {
-        width: 98.5px;
-        height: 600px;
-        gap: 0px;
+        width: 100%;
+        height: 400px;
+        padding: 20px;
     }
     
     .gallery-item .info,
     .gallery-item a {
-        display: none;
+        display: none; /* Hide text and links on small screens */
     }
 }
