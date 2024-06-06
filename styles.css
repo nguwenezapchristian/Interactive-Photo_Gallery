@@ -119,15 +119,15 @@ a {
 /* Responsive design adjustments for mobile devices */
 @media (max-width: 600px) {
     .gallery {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
+        width: 400px;
+        height: 600px;
+        gap: 2px;
     }
-    
+
     .gallery-item {
-        width: 100%;
-        height: 400px;
-        padding: 20px;
+        width: 98.5px;
+        height: 600px;
+        gap: 0px;
     }
     
     .gallery-item .info,
